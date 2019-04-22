@@ -1,5 +1,9 @@
 from tkinter import *
 
+from twitter_scrape import *
+
+from reddit_scrape import *
+
 fields = ('Consumer Key:','Consumer secret:','Access token:','Latitude:','Longitude:','Radius:')
 
 def makeform(root, fields):
@@ -21,6 +25,8 @@ def Reddit_GUI():
         
     for widget in twitter_toolbar.winfo_children():
         widget.destroy()
+
+    reddit_toolbar.update()
 
     l1 = Label(reddit_toolbar, text = "Subreddit you wish to scrape: ")
 
@@ -44,6 +50,8 @@ def Twitter_GUI():
     for widget in twitter_toolbar.winfo_children():
         widget.destroy()
 
+    twitter_toolbar.update()
+
     ents = makeform(twitter_toolbar, fields)
 
     twitter_toolbar.bind('<Return>', (lambda event, e=ents: fetch(e)))
@@ -53,14 +61,6 @@ def Twitter_GUI():
     btn1.pack(side = TOP, padx = 10, pady = 10)
     
     twitter_toolbar.pack(fill = X, expand = True)
-
-def Twitter_Scrape():
-    
-    print("Scrape")
-
-def Reddit_Scrape():
-
-    print("Scrape")
 
 window = Tk()
  
