@@ -1,5 +1,9 @@
 from tkinter import *
 
+from reddit_scrape import *
+
+from twitter_scrape import *
+
 fields = ('Consumer Key:','Consumer secret:','Access token:','Latitude:','Longitude:','Radius:')
 
 def makeform(root, fields):
@@ -57,14 +61,6 @@ def Twitter_GUI():
     btn1.pack(side = TOP, padx = 10, pady = 10)
     
     twitter_toolbar.pack(fill = X, expand = True)
-
-def Twitter_Scrape():
-    
-    print("Scrape")
-
-def Reddit_Scrape():
-
-    print("Scrape")
 
 window = Tk()
  
