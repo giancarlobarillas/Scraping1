@@ -1,6 +1,6 @@
 from tkinter import *
 
-fields = ('Consumer Key','Consumer secret','Access token','Latitude','Longitude','Radius')
+fields = ('Consumer Key:','Consumer secret:','Access token:','Latitude:','Longitude:','Radius:')
 
 def makeform(root, fields):
    entries = []
@@ -34,7 +34,7 @@ def Reddit_GUI():
 
     btn1.pack(side = TOP, padx = 10, pady = 10)
 
-    reddit_toolbar.pack()
+    reddit_toolbar.pack(fill = X, expand = True)
     
 def Twitter_GUI():
 
@@ -52,7 +52,7 @@ def Twitter_GUI():
 
     btn1.pack(side = TOP, padx = 10, pady = 10)
     
-    twitter_toolbar.pack()
+    twitter_toolbar.pack(fill = X, expand = True)
 
 def Twitter_Scrape():
     
