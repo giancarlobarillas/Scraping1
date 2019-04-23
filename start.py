@@ -32,7 +32,7 @@ def Reddit_GUI():
 
     e1.pack(side=TOP, fill=X, padx=5, pady=5)
 
-    btn1 = Button(toolbar2, text = "Submit", width = 16, command = Reddit_Scrape)
+    btn1 = Button(toolbar2, text = "Submit", width = 16, command = lambda:  Reddit_Scrape(e1.get()))
 
     btn1.pack(side = TOP, padx = 10, pady = 10)
 
