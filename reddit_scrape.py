@@ -18,19 +18,19 @@ def Reddit_Scrape(subreddit):
     hot_subreddit = subreddit1.hot(limit = 200)
 
     topics_dict = { "title":[], \
-                    "score":[], \
                     "id":[], "url":[], \
-                    "comms_num": [], \
+                    "score":[], \
                     "created": [], \
+                    "comms_num": [], \
                     "body":[]}
 
     for submission in hot_subreddit:
         topics_dict["title"].append(submission.title)
-        topics_dict["score"].append(submission.score)
         topics_dict["id"].append(submission.id)
+        topics_dict["score"].append(submission.score)
         topics_dict["url"].append(submission.url)
-        topics_dict["comms_num"].append(submission.num_comments)
         topics_dict["created"].append(submission.created)
+        topics_dict["comms_num"].append(submission.num_comments)
         topics_dict["body"].append(submission.selftext)
 
     
@@ -40,7 +40,7 @@ def Reddit_Scrape(subreddit):
     _timestamp = data["created"].apply(get_date)
     
     data = data.assign(timestamp = _timestamp)
-    
+
     data.to_csv('%s.csv' % (subreddit), index=False) 
 
     
